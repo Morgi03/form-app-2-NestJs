@@ -1,4 +1,5 @@
 import { Get, Controller, Render, Post, Body } from '@nestjs/common';
+import { TextColorDto } from './text-color.dto';
 
 @Controller()
 export class AppController {
@@ -11,7 +12,7 @@ export class AppController {
     return {};
   }
   @Post()
-  handleColor(@Body() body: object): string {
-    return 'OK ' + Object.values(body);
+  handleColor(@Body() body: TextColorDto): string {
+    return 'OK ' + body.textcolor + ' ' + body.content;
   }
 }
