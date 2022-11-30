@@ -12,7 +12,8 @@ export class AppController {
     return {};
   }
   @Post()
-  handleColor(@Body() body: TextColorDto): string {
-    return 'OK ' + body.textcolor + ' ' + body.content;
+  @Render('color')
+  handleColor(@Body() body: TextColorDto): object {
+    return body;
   }
 }
